@@ -1,0 +1,38 @@
+@import "../../shared";
+
+.Nav {
+  list-style-type: none;
+  font-family: "Open Sans", sans;
+  font-weight: bold;
+  margin: 0;
+  padding: 1rem 0;
+
+  @media (min-width: $breakpoint-tablet) {
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+  }
+
+  li {
+    display: inline;
+
+    a {
+      padding: 1rem 1.8rem;
+      transition: ease(background);
+      text-decoration: none;
+      border-radius: 0.4rem;
+      color: $nav-text-colour;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.5);
+        text-decoration: underline;
+      }
+
+      &.Active:hover,
+      &.Active {
+        background: rgba(0, 0, 0, 0.2);
+        text-decoration: underline;
+      }
+    }
+  }
+}

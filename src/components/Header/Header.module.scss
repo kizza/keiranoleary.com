@@ -1,0 +1,71 @@
+@import "../../shared";
+
+.Header {
+  position: absolute;
+  background: rgba(0, 0, 0, 0);
+  padding: 4vw 2vw;
+  z-index: 3;
+  transition: ease(padding), ease(background);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+
+  .Logo {
+    transition: ease(max-height), ease(margin);
+    max-height: 10rem;
+    max-width: 80%;
+    margin: 1rem;
+  }
+
+  .Nav {
+    transition: ease(margin);
+    font-size: 1rem;
+    margin: 1em 0 2em;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    .Nav {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    .Logo {
+      margin: 0 0 0 2vw;
+      float: left;
+    }
+
+    .Nav {
+      margin: 0.4rem 0 0;
+      float: right;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.Slim {
+  @media (min-width: $breakpoint-tablet) {
+    .Nav {
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    // background: rgba(0, 0, 0, 0.9);
+    background: #35281a;
+    // position: fixed;
+    padding: 0.6rem 0;
+
+    .Logo {
+      max-height: 2rem;
+      margin: 0.3rem 0.6rem;
+    }
+
+    .Nav {
+      margin: 0;
+      font-size: 0.7rem;
+      a {
+        background: transparent !important;
+      }
+    }
+  }
+}

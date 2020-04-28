@@ -1,0 +1,96 @@
+@import "../../shared";
+
+.Section {
+  // background-position: center center;
+  // background-size: 150%;
+  min-height: 4em;
+  color: $text-colour;
+  position: relative;
+  text-align: center;
+  background: white;
+  // transition: background 2.5s ease-out;
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    text-align: left;
+  }
+
+  .Background {
+    min-height: 100%;
+    opacity: 0.5;
+    position: absolute;
+  }
+
+  .Cover {
+    bottom: 0;
+    left: 0;
+    // opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &.Animate {
+      animation: fadeout 2s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .Content {
+    // padding: 8vw 4vw;
+    // position: relative;
+    z-index: 2;
+
+    &.Animate {
+      animation: slidedown 0.8s ease-out;
+    }
+  }
+
+  &::after {
+    content: "";
+    background: pink;
+    height: 3rem;
+    left: -2em;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: auto;
+    transform-origin: 0 0;
+    transform: rotate(-2deg);
+    width: 150%;
+    z-index: 2;
+  }
+
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slidedown {
+  from {
+    top: -1.5em;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.Loading {
+  background-image: url(../../images/preload.gif);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  .Content {
+    visibility: hidden;
+  }
+}

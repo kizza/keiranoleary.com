@@ -1,0 +1,123 @@
+@import-normalize;
+@import "./shared";
+
+@media (min-width: $breakpoint-tablet) {
+  body {
+    border-right: solid 2px red;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  body {
+    border-right: solid 2px purple;
+  }
+}
+
+/* Rhythm */
+
+
+h1,
+h2,
+h3 {
+  font-family: "Droid Serif";
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+h2 + p {
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+html {
+  line-height: 1.4;
+  background: #666;
+  font-size: 16px;
+}
+
+/*
+ * Typography
+ */
+
+:root {
+  --size: 500;
+}
+
+html {
+  font-size: calc(16*100vw/var(--size));
+}
+
+@media (min-width: $breakpoint-tablet) {
+  :root {
+    --size: 800;
+  }
+
+  html {
+    // font-size: 22px;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  :root {
+    --size: 1200;
+  }
+
+  html {
+    // font-size: 22px
+  }
+}
+
+/* */
+
+.App {
+  background: white;
+  width: 100%;
+  color: #333;
+}
+
+
+/* .App-logo { */
+/*   height: 40vmin; */
+/*   pointer-events: none; */
+/* } */
+
+/* @media (prefers-reduced-motion: no-preference) { */
+/*   .App-logo { */
+/*     animation: App-logo-spin infinite 20s linear; */
+/*   } */
+/* } */
+
+/* .App-header { */
+/*   background-color: #282c34; */
+/*   min-height: 100vh; */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   align-items: center; */
+/*   justify-content: center; */
+/*   font-size: calc(10px + 2vmin); */
+/*   color: white; */
+/* } */
+
+/* .App-link { */
+/*   color: #61dafb; */
+/* } */
+
+/* @keyframes App-logo-spin { */
+/*   from { */
+/*     transform: rotate(0deg); */
+/*   } */
+/*   to { */
+/*     transform: rotate(360deg); */
+/*   } */
+/* } */

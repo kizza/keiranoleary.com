@@ -1,0 +1,18 @@
+@import "../../shared";
+
+.Columns {
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .Columns {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Columns {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+}

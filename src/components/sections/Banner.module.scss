@@ -1,0 +1,35 @@
+@import "../../shared";
+
+.Banner {
+  padding: 8rem 2rem 8rem;
+
+  h2 {
+    padding: 2rem 0 1rem;
+    text-shadow: 0 0 1em #000;
+  }
+
+  p {
+    text-shadow: 0 0 1em #000;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .Banner {
+    padding: 12rem 2rem;
+
+    h2 {
+      padding: 0rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Banner {
+    padding: 8rem 2rem;
+    margin: 0 auto;
+
+    h2 {
+      padding: 1rem 0;
+    }
+  }
+}

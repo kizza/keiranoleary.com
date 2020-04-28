@@ -1,0 +1,40 @@
+@import "../../shared";
+
+.Button {
+  background: transparent;
+  border: solid 1px #fff;
+  border-radius: .1em;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: .6em;
+  max-width: 50%;
+  padding: .6em 3em .6em 1.4em;
+  position: relative;
+  text-shadow: none;
+  transition: padding 200ms;
+
+  &:hover {
+    background: #fff;
+    border-radius: 0;
+    color: #222;
+    padding-right: 3.8rem;
+    text-decoration: underline;
+  }
+
+  .Icon {
+    line-height: 1.6rem;
+    position: absolute;
+    right: .8rem;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .Button {
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Button {
+  }
+}

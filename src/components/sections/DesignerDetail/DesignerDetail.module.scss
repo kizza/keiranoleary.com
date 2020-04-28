@@ -1,0 +1,35 @@
+@import "../../../shared/";
+
+.DesignerDetail {
+  background: white; //$yellow;
+  color: $text-inverse-colour;
+
+  h3 {
+    font-family: $font-designer;
+  }
+
+  $icon: white;
+  $background: $pink;
+
+  svg {
+    background: $background;
+    color: $icon;
+  }
+
+  div div:hover {
+    svg {
+      background: $yellow;
+      color: $background;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .DesignerDetail {
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .DesignerDetail {
+  }
+}

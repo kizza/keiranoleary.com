@@ -1,0 +1,17 @@
+@import "../../shared";
+
+.Parallax {
+  position: relative;
+  transition: top ease 0.5s;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .Columns {
+    display: flex;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Columns {
+  }
+}

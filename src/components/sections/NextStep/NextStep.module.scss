@@ -1,0 +1,55 @@
+@import "../../../shared";
+
+.NextStep {
+  text-align: center;
+  color: #333;
+  padding: 6rem 2rem;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+    font-family: $font-designer;
+    text-shadow: none;
+  }
+  p {
+    text-shadow: none;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    color: $text-inverse-colour;
+    transition: color 0.2s ease-out;
+    text-decoration: underline;
+    color: $blue;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+
+  .Icon {
+    transition: ease(color);
+    cursor: pointer;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .NextStep {
+    max-width: 60%;
+
+    .Icon {
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .NextStep {
+    .Icon {
+    }
+  }
+}

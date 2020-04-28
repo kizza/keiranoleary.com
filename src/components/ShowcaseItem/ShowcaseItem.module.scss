@@ -1,0 +1,64 @@
+@import "../../shared";
+
+.ShowcaseItem {
+  padding-bottom: 0;
+
+  h2 {
+    padding: 0 0 1rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  .Thumbnail {
+    position: relative;
+    top: 1rem;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.LightBackground {
+  color: #222;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .ShowcaseItem {
+    padding: 8rem 0 4rem 2rem;
+    min-height: 10rem;
+    margin-right: 50%;
+
+    .Thumbnail {
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      top: auto;
+      bottom: 0;
+      width: 50%;
+
+      img {
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .ShowcaseItem {
+    padding: 8rem 0 4rem 2rem;
+    min-height: 10rem;
+    margin-right: 56%;
+    max-width: 22rem;
+
+    .Thumbnail {
+      width: 50%;
+      right: 4%;
+      max-width: 28rem;
+
+      img {
+      }
+    }
+  }
+}

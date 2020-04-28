@@ -1,0 +1,36 @@
+@import "../../../shared";
+
+.SelectedWorks {
+  padding-top: 14rem;
+
+  h2 {
+    font-size: 2.7rem;
+    font-family: $font-designer;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .SelectedWorks {
+    text-align: center;
+    padding-bottom: 8rem;
+
+    .Icon {
+      transform: scale(0.8 ,0.8);
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .SelectedWorks {
+    padding-left: 12rem;
+    padding-top: 10rem;
+    max-width: 30rem;
+
+    .Icon {
+      transform: scale(1.2, 1.2);
+      position: absolute;
+      left: -20vw;
+      margin-top: 0;
+    }
+  }
+}
