@@ -1,0 +1,65 @@
+@import "../../shared";
+
+.WideDivider {
+}
+@media (min-width: $breakpoint-desktop) {
+  .WideDivider {
+    &::after {
+      height: 6rem;
+    }
+  }
+}
+
+.NoDivider {
+  &::after {
+    height: 0;
+  }
+}
+
+.PinkDivider {
+  &::after {
+    background: $pink;
+  }
+}
+
+.YellowDivider {
+  &::after {
+    background: $yellow;
+  }
+}
+
+.WhiteDivider {
+  &::after {
+    background: #fff;
+  }
+}
+
+.BlueDivider {
+  &::after {
+    background: $blue;
+  }
+}
+
+.SteelDivider {
+  &::after {
+    background: $steel;
+  }
+}
+
+.WhiteDivider {
+  &::after {
+    background: #fff;
+  }
+}
+
+.BlackDivider {
+  &::after {
+    background: #222;
+  }
+}
+
+.GreyDivider {
+  &::after {
+    background: $dark-grey;
+  }
+}

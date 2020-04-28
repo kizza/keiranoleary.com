@@ -1,0 +1,16 @@
+@import "../../shared";
+
+.Columns {
+  padding: 4rem 2rem;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .Columns {
+    padding: 3.4rem 0 6.4rem;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Columns {
+  }
+}

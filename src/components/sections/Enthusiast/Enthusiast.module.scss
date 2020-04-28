@@ -1,0 +1,43 @@
+@import "../../../shared";
+
+.Enthusiast {
+  font-family: $font-developer;
+
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  .green {
+    color: #9ccc3d;
+  }
+
+  .beige {
+    color: #ccc47a;
+  }
+
+  .pink {
+    color: $pink;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .Enthusiast {
+    padding-right: 12rem;
+
+    .Icon {
+      transform: scale(1.2, 1.2);
+      position: absolute;
+      right: -16vw;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Enthusiast {
+    max-width: 36rem;
+
+    .Icon {
+    }
+  }
+}

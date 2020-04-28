@@ -1,0 +1,30 @@
+// Typography
+$text-colour: red;
+$nav-text-colour: $text-colour;
+$text-inverse-colour: yellow;
+
+$font-designer: 'Playfair Display', serif;
+$font-developer: Consolas, Monaco, "Lucida Console", source-code-pro, Menlo, 'Courier New', sans;
+
+
+$text-colour: #fff;
+$nav-text-colour: $text-colour;
+$text-inverse-colour: #333;
+
+// Colours
+$pink: #E52E71;
+$blue2: #479CA3;
+$blue: #2281bc;
+$steel: #004B61;
+$yellow: #ffff6f;
+$light-blue: #83EBFF;
+$top-background: red;
+$dark-grey: #232323;
+$light-grey: #f5f5f5;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+
+@function ease($attribute) {
+  @return $attribute 0.4s;
+}

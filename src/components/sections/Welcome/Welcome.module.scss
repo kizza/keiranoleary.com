@@ -1,0 +1,62 @@
+@import "../../../shared";
+
+.Welcome {
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+  padding-top: 13rem !important;
+
+  h2 {
+    font-family: "Droid Serif", serif;
+    font-size: 2.2rem;
+  }
+
+  a {
+    color: $text-colour;
+    transition: color 0.2s;
+    text-decoration: underline;
+
+    svg {
+      display: none;
+        min-width: 2em;
+    }
+  }
+
+  .DesignerLink:hover {
+    color: $pink;
+  }
+
+  .DeveloperLink:hover {
+    color: $blue;
+  }
+
+  .EnthusiastLink:hover {
+    color: $light-blue;
+  }
+}
+
+.Welcome {
+  background-position: 50% 0;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .Welcome {
+    padding-top: 17rem !important;
+
+    h2 {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Welcome {
+    padding: 10rem 0 9rem !important;
+
+    h2 {
+      font-size: 2.4rem;
+      margin: 0 auto;
+      max-width: 46rem;
+    }
+  }
+}

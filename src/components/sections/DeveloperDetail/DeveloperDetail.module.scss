@@ -1,0 +1,32 @@
+@import "../../../shared";
+
+.DeveloperDetail {
+  background: $dark-grey;
+  color: $text-colour;
+
+  h3 {
+    font-family: $font-developer;
+  }
+
+  svg {
+    background: #111;
+    color: #54c7e8;
+  }
+
+  div div:hover {
+    svg {
+      background: #004B61;
+      color: white;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .DeveloperDetail {
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .DeveloperDetail {
+  }
+}

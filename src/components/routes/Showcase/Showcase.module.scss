@@ -1,0 +1,17 @@
+@import "../../shared";
+
+.Showcase {
+  // background: url(../../images/welcome.jpg);
+  min-height: 10em;
+}
+
+@media (min-width: $breakpoint-tablet) {
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Welcome {
+    padding: 6vw 4vw 2vw;
+    background-size: 112%;
+    background-position: 50% -10vw;
+  }
+}

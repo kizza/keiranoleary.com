@@ -1,0 +1,42 @@
+@import "../../../shared";
+
+.Developer {
+  h2 {
+    font-size: 2.6rem;
+    font-family: $font-developer;
+  }
+
+  .green {
+    color: #9ccc3d;
+  }
+
+  .beige {
+    color: #ccc47a;
+  }
+
+  .pink {
+    color: $pink;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .Developer {
+    padding-right: 12rem;
+    max-width: 36rem;
+
+    .Icon {
+      transform: scale(1.2, 1.2);
+      position: absolute;
+      right: -22vw;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .Developer {
+    .Icon {
+      right: -18vw;
+    }
+  }
+}
