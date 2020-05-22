@@ -28,13 +28,17 @@ describe.only("useScrollPosition", () => {
   test("scrolls", () => {
     const elementRef = mockElementRef({ top: 10 });
 
-    useScrollPosition(
-      ({ y }) => {
-        console.log("Scroll", y);
-      },
-      elementRef,
-      0
-    );
+    const run = () => {
+      useScrollPosition(
+        ({ y }) => {
+          console.log("Scroll", y);
+        },
+        elementRef,
+        0
+      );
+    };
+
+    run();
 
     expect(true).toBe(true);
     // const { getByText } = render(<App />);

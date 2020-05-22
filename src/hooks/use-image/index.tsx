@@ -1,16 +1,28 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 export interface Dimensions {
   width: number;
   height: number;
 }
 
-export default (src: string | undefined): [boolean, Dimensions | undefined] => {
+export const withImage = (src: string) => (Component: any) => (props: any) => {
+  const [_, imageDimensions] = useImage(src);
+  return <Component {...props} image={src} imageDimensions={imageDimensions} />;
+};
+
+export const useImage = (
+  src: string | undefined,
+  callback?: () => void
+): [boolean, Dimensions | undefined] => {
   const [imageDimensions, setImageDimensions] = useState<
     Dimensions | undefined
   >();
   const [image] = useState<HTMLImageElement>(new Image());
   const loaded = !!imageDimensions;
+
+  const backgroundLoadedCallback = useCallback(() => {
+    callback && callback();
+  }, [loaded]);
 
   useEffect(() => {
     const loadImage = (src: string) => {
@@ -19,11 +31,8 @@ export default (src: string | undefined): [boolean, Dimensions | undefined] => {
 
     const listenForImageLoad = (image: any) => {
       image.onload = () => {
-        /* setTimeout( */
-        /*   () => */
         setImageDimensions({ width: image.width, height: image.height });
-        /* 1000 */
-        /* ); */
+        backgroundLoadedCallback();
         image.onload = null;
       };
     };
@@ -36,3 +45,5 @@ export default (src: string | undefined): [boolean, Dimensions | undefined] => {
 
   return [loaded, imageDimensions];
 };
+
+export default useImage;

@@ -10,7 +10,10 @@ type ReturnProps = [MutableRefObject<any>, AnimateProps[], any];
 
 const DISPLAY_AT_RATIO = 0.8;
 
-export default (animation: string | string[]): ReturnProps => {
+export default (
+  animation: string | string[],
+  predicate?: () => boolean
+): ReturnProps => {
   const elementRef = useRef<Element | null>(null);
 
   const animationClasses: string[] = (animation as any).join

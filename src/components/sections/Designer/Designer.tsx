@@ -1,14 +1,20 @@
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useCallback } from "react";
 import useAnimationWhenVisible from "../../../hooks/use-animation-when-visible";
+import { withImage, Dimensions } from "../../../hooks/use-image";
 import { animations, colours, delay } from "../../../shared";
 import Section from "../../Section";
 import display from "../../sections/Banner.module.scss";
 import dividers from "../../sections/Dividers.module.scss";
 import styles from "./Designer.module.scss";
 
-export default () => {
+interface Props {
+  image: string;
+  imageDimensions: Dimensions;
+}
+
+const Designer = ({ imageDimensions }: Props) => {
   const [
     scrollRef,
     [headerAnimation, textAnimation, iconAnimation],
@@ -18,9 +24,15 @@ export default () => {
     delay("fadeInLeft", 0),
   ]);
 
+  const backgroundLoaded = () => {
+    console.log("Designer section background loaded");
+    console.log(headerAnimation);
+  };
+
   return (
     <Section
       refName="designer"
+      onBackgroundLoaded={backgroundLoaded}
       alphaColour={[148, 32, 74, 0.7]}
       backgroundColour={colours.pink}
       backgroundImage="images/designer.jpg"
@@ -47,3 +59,5 @@ export default () => {
     </Section>
   );
 };
+
+export default withImage("images/designer.png")(Designer);

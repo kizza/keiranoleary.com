@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState, useCallback } from "react";
 import useImage, { Dimensions } from "../../hooks/use-image";
 import { useSectionRegister } from "../../hooks/use-sections";
 import DownIcon from "../DownIcon";
@@ -20,6 +20,7 @@ interface Props {
   backgroundImage?: string;
   downIcon?: boolean;
   children: any;
+  onBackgroundLoaded?: () => void;
 }
 
 const useBackgroundImage = (
@@ -65,7 +66,7 @@ const useBackgroundImage = (
 
 const Section = (props: Props) => {
   /* const { backgroundColour } = props; */
-  const { backgroundColour, backgroundImage } = props;
+  const { backgroundColour, backgroundImage, onBackgroundLoaded } = props;
   /* const backgroundImage = undefined; */
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -76,7 +77,10 @@ const Section = (props: Props) => {
     height: 0,
   });
 
-  const [imageLoaded, imageDimensions] = useImage(backgroundImage);
+  const [imageLoaded, imageDimensions] = useImage(
+    backgroundImage,
+    onBackgroundLoaded
+  );
 
   useLayoutEffect(() => {
     if (sectionRef && sectionRef.current) {

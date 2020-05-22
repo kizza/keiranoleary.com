@@ -36,7 +36,7 @@ const getScrollPosition = (element: ScrollTarget) => {
     : getWindowScrollPosition();
 };
 
-export default (
+const useScrollPosition = (
   callback: (current: Pos, previous: Pos) => void,
   target: ScrollTarget,
   wait = 0,
@@ -70,3 +70,5 @@ export default (
   }, []);
   /* }, [callback, element, useWindow, wait, ...deps]); */
 };
+
+export default useScrollPosition;
