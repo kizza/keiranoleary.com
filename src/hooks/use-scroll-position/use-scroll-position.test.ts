@@ -1,5 +1,8 @@
 import React, { MutableRefObject } from "react";
+import { renderHook, act } from "@testing-library/react-hooks";
 import useScrollPosition from ".";
+import { fireEvent } from "@testing-library/react";
+
 // import { render } from "@testing-library/react";
 // import useScrollPosition from "./";
 
@@ -26,23 +29,17 @@ const mockElementRef = (
 
 describe.only("useScrollPosition", () => {
   test("scrolls", () => {
-    const elementRef = mockElementRef({ top: 10 });
+    const elementRef = mockElementRef({ top: 12 });
+    let scrolledCallback;
 
-    const run = () => {
-      useScrollPosition(
-        ({ y }) => {
-          console.log("Scroll", y);
-        },
-        elementRef,
-        0
-      );
-    };
+    renderHook(() =>
+      useScrollPosition(({ y }) => (scrolledCallback = y), elementRef, 0)
+    );
 
-    run();
+    act(() => {
+      fireEvent.scroll(window, { target: { scrollY: 200 } });
+    });
 
-    expect(true).toBe(true);
-    // const { getByText } = render(<App />);
-    // const linkElement = getByText(/learn react/i);
-    // expect(linkElement).toBeInTheDocument();
+    expect(scrolledCallback).toBe(12);
   });
 });
